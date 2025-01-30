@@ -10,7 +10,7 @@ namespace MvcCv.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("/Default/Index");
         }
 
         public ActionResult About()
