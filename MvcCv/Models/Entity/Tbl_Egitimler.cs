@@ -11,25 +11,14 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Tbl_Egitimler
     {
         public int Id { get; set; }
-        [Required(ErrorMessage ="Bu alaný Boþ Geçemezsiniz!")]
-        [StringLength(100)]
         public string Baslik { get; set; }
-        [Required(ErrorMessage = "Bu alaný Boþ Geçemezsiniz!")]
-        [StringLength(100)]
         public string AltBaslik { get; set; }
-        [StringLength(100)]
-        [Required(ErrorMessage = "Bu alaný Boþ Geçemezsiniz!")]
         public string AltBaslik2 { get; set; }
-        [StringLength(10, ErrorMessage ="Lütfen Maksimum 10 Karakterlik Veri Giriþi Yapýnýz")]
-        [Required(ErrorMessage = "Bu alaný Boþ Geçemezsiniz!")]
         public string GNO { get; set; }
-        [StringLength(100)]
-        [Required(ErrorMessage = "Bu alaný Boþ Geçemezsiniz!")]
         public string Tarih { get; set; }
     }
 }

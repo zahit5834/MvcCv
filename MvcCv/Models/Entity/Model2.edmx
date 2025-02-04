@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbCv001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Tbl_Admin">
           <Key>
             <PropertyRef Name="Id" />
@@ -72,6 +72,16 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Aciklama" Type="varchar" MaxLength="250" />
+          <Property Name="Tarih" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Tbl_SosyalMedya">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="30" />
+          <Property Name="Link" Type="varchar" MaxLength="50" />
+          <Property Name="icon" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Tbl_Yetenekler">
           <Key>
@@ -81,7 +91,7 @@
           <Property Name="Yetenek" Type="varchar" MaxLength="100" />
           <Property Name="Oran" Type="tinyint" />
         </EntityType>
-        <EntityContainer Name="DbCvModelStoreContainer">
+        <EntityContainer Name="DbCv001ModelStoreContainer">
           <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Deneyimler" EntityType="Self.Tbl_Deneyimler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Egitimler" EntityType="Self.Tbl_Egitimler" Schema="dbo" store:Type="Tables" />
@@ -89,12 +99,13 @@
           <EntitySet Name="Tbl_Hobiler" EntityType="Self.Tbl_Hobiler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Iletisim" EntityType="Self.Tbl_Iletisim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Sertifikalar" EntityType="Self.Tbl_Sertifikalar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_SosyalMedya" EntityType="Self.Tbl_SosyalMedya" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Yetenekler" EntityType="Self.Tbl_Yetenekler" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DbCv001Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Tbl_Admin">
           <Key>
             <PropertyRef Name="Id" />
@@ -162,6 +173,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tbl_Yetenekler">
           <Key>
@@ -171,7 +183,7 @@
           <Property Name="Yetenek" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Oran" Type="Byte" />
         </EntityType>
-        <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DbCv001Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" />
           <EntitySet Name="Tbl_Deneyimler" EntityType="Self.Tbl_Deneyimler" />
           <EntitySet Name="Tbl_Egitimler" EntityType="Self.Tbl_Egitimler" />
@@ -180,15 +192,25 @@
           <EntitySet Name="Tbl_Iletisim" EntityType="Self.Tbl_Iletisim" />
           <EntitySet Name="Tbl_Sertifikalar" EntityType="Self.Tbl_Sertifikalar" />
           <EntitySet Name="Tbl_Yetenekler" EntityType="Self.Tbl_Yetenekler" />
+          <EntitySet Name="Tbl_SosyalMedya" EntityType="DbCv001Model.Tbl_SosyalMedya" />
         </EntityContainer>
+        <EntityType Name="Tbl_SosyalMedya">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="icon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DbCvModelStoreContainer" CdmEntityContainer="DbCvEntities">
+        <EntityContainerMapping StorageEntityContainer="DbCv001ModelStoreContainer" CdmEntityContainer="DbCv001Entities">
           <EntitySetMapping Name="Tbl_Admin">
-            <EntityTypeMapping TypeName="DbCvModel.Tbl_Admin">
+            <EntityTypeMapping TypeName="DbCv001Model.Tbl_Admin">
               <MappingFragment StoreEntitySet="Tbl_Admin">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
@@ -197,7 +219,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Deneyimler">
-            <EntityTypeMapping TypeName="DbCvModel.Tbl_Deneyimler">
+            <EntityTypeMapping TypeName="DbCv001Model.Tbl_Deneyimler">
               <MappingFragment StoreEntitySet="Tbl_Deneyimler">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Baslik" ColumnName="Baslik" />
@@ -208,7 +230,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Egitimler">
-            <EntityTypeMapping TypeName="DbCvModel.Tbl_Egitimler">
+            <EntityTypeMapping TypeName="DbCv001Model.Tbl_Egitimler">
               <MappingFragment StoreEntitySet="Tbl_Egitimler">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Baslik" ColumnName="Baslik" />
@@ -220,7 +242,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Hakkinda">
-            <EntityTypeMapping TypeName="DbCvModel.Tbl_Hakkinda">
+            <EntityTypeMapping TypeName="DbCv001Model.Tbl_Hakkinda">
               <MappingFragment StoreEntitySet="Tbl_Hakkinda">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
@@ -234,7 +256,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Hobiler">
-            <EntityTypeMapping TypeName="DbCvModel.Tbl_Hobiler">
+            <EntityTypeMapping TypeName="DbCv001Model.Tbl_Hobiler">
               <MappingFragment StoreEntitySet="Tbl_Hobiler">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
@@ -243,7 +265,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Iletisim">
-            <EntityTypeMapping TypeName="DbCvModel.Tbl_Iletisim">
+            <EntityTypeMapping TypeName="DbCv001Model.Tbl_Iletisim">
               <MappingFragment StoreEntitySet="Tbl_Iletisim">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
@@ -255,19 +277,30 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Sertifikalar">
-            <EntityTypeMapping TypeName="DbCvModel.Tbl_Sertifikalar">
+            <EntityTypeMapping TypeName="DbCv001Model.Tbl_Sertifikalar">
               <MappingFragment StoreEntitySet="Tbl_Sertifikalar">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Yetenekler">
-            <EntityTypeMapping TypeName="DbCvModel.Tbl_Yetenekler">
+            <EntityTypeMapping TypeName="DbCv001Model.Tbl_Yetenekler">
               <MappingFragment StoreEntitySet="Tbl_Yetenekler">
-                <ScalarProperty Name="Oran" ColumnName="Oran" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Yetenek" ColumnName="Yetenek" />
+                <ScalarProperty Name="Oran" ColumnName="Oran" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_SosyalMedya">
+            <EntityTypeMapping TypeName="DbCv001Model.Tbl_SosyalMedya">
+              <MappingFragment StoreEntitySet="Tbl_SosyalMedya">
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -10,11 +10,16 @@ namespace MvcCv.Controllers
     public class DefaultController : Controller
     {
         // GET: Default
-        DbCvEntities db = new DbCvEntities();
+        DbCv001Entities db = new DbCv001Entities();
         public ActionResult Index()
         {
             var degerler = db.Tbl_Hakkinda.ToList();
             return View(degerler);
+        }
+        public PartialViewResult SosyalMedya()
+        {
+            var sosyalmedya = db.Tbl_SosyalMedya.ToList();
+            return PartialView(sosyalmedya);
         }
         public PartialViewResult Deneyim()
         {

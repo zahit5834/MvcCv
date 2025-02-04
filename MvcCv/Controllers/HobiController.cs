@@ -6,29 +6,25 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace MvcCv.Controllers
 {
-    public class HakkimdaController : Controller
+    public class HobiController : Controller
     {
-        // GET: Hakkimda
-        GenericRepository<Tbl_Hakkinda> repo = new GenericRepository<Tbl_Hakkinda>();
+        // GET: Hobi
+        GenericRepository<Tbl_Hobiler> repo = new GenericRepository<Tbl_Hobiler>();
         [HttpGet]
         public ActionResult Index()
         {
-            var hakkında = repo.List();
-            return View(hakkında);
+            var hobiler = repo.List();
+            return View(hobiler);
         }
         [HttpPost]
-        public ActionResult Index(Tbl_Hakkinda p)
+        public ActionResult Index(Tbl_Hobiler p)
         {
             var t = repo.Find(x => x.Id == 1);
-            t.Ad = p.Ad;
-            t.Soyad = p.Soyad;
-            t.Adres = p.Adres;
-            t.Telefon = p.Telefon;
-            t.Mail = p.Mail;
             t.Aciklama = p.Aciklama;
-            t.Fotograf = p.Fotograf;
+            t.Aciklama2 = p.Aciklama2;
             repo.TUpdate(t);
             return RedirectToAction("Index");
         }
