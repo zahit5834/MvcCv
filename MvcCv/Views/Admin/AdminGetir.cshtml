@@ -1,0 +1,20 @@
+﻿@model MvcCv.Models.Entity.Tbl_Admin
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Düzenleme</h2>
+<br />
+<form method="post">
+    @Html.Label("Admin ID")
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.Label("Kullanıcı Adı:")
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şifre:")
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control", @type = "password" })
+    <br />
+    <button class="btn btn-info">Düzenle</button>
+</form>

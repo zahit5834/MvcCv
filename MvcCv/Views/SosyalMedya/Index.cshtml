@@ -27,6 +27,7 @@
                                         <tr>
                                             <th style="width: 10px">#</th>
                                             <th>Hesap</th>
+                                            <th style="width: 125px">Durum</th>
                                             <th style="width: 85px">Sil</th>
                                             <th style="width: 125px">Düzenle</th>
                                         </tr>
@@ -38,8 +39,15 @@
                                             <tr>
                                                 <td>@x.Id</td>
                                                 <td>@x.Ad</td>
-                                                
-                                                <td><a href="/SosyalMedya/SosyalMedyaSil/@x.Id" class="btn btn-danger"><i class="fas fa-trash"></i> Sil</a></td>
+                                                @if (x.Durum == true)
+                                                {
+                                                    <td>Aktif</td>
+                                                }
+                                                @if (x.Durum == false)
+                                                {
+                                                    <td>Pasif</td>
+                                                }
+                                                <td><a href="/SosyalMedya/Sil/@x.Id" class="btn btn-danger"><i class="fas fa-trash"></i> Sil</a></td>
                                                 <td><a href="/SosyalMedya/SayfaGetir/@x.Id" class="btn btn-warning">  <i class="fas fa-pencil-alt"></i> Düzenle</a></td>
                                             </tr>
                                         }
