@@ -10,3 +10,4 @@
 #### Uygulama açıldığında, ana sayfada özgeçmiş bilgilerinizi göreceksiniz.
 
 ### Link: https://mehmetzahitakbulut.somee.com
+![MVC Cv1](https://github.com/user-attachments/assets/36af98e4-453d-49e1-8fea-e15309c89fc4)
