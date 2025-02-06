@@ -8,3 +8,5 @@
 #### Proje ve deneyim ekleme imkanı
 ## Kullanım
 #### Uygulama açıldığında, ana sayfada özgeçmiş bilgilerinizi göreceksiniz.
+
+### Link: https://mehmetzahitakbulut.somee.com
