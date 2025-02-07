@@ -7,7 +7,7 @@
 #### Responsive tasarım
 #### Proje ve deneyim ekleme imkanı
 
-### Link: [https://mehmetzahitakbulut.somee.com](https://mehmetzahitakbulut.com)
+### Link: [https://mehmetzahitakbulut.com](https://mehmetzahitakbulut.com)
 
 ## Ekran Görüntüleri:
 
